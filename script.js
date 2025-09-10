@@ -22,10 +22,14 @@ document.getElementById('appointmentForm2').addEventListener('submit', function(
         return;
     }
     
-    // Check business hours (9 AM - 5 PM)
-    const hour = parseInt(time.split(':')[0]);
-    if (hour < 9 || hour >= 17) {
-        document.getElementById('result2').innerHTML = 'Appointments only available 9 AM - 5 PM!';
+    // Check business hours (9:30 AM - 4:30 PM with 30 min buffer)
+    const [hours, minutes] = time.split(':').map(Number);
+    const timeInMinutes = hours * 60 + minutes;
+    const startTime = 9 * 60 + 30; // 9:30 AM
+    const endTime = 16 * 60 + 30;  // 4:30 PM
+    
+    if (timeInMinutes < startTime || timeInMinutes > endTime) {
+        document.getElementById('result2').innerHTML = 'Appointments only available 9:30 AM - 4:30 PM!';
         document.getElementById('result2').className = 'error';
         document.getElementById('result2').style.display = 'block';
         return;
