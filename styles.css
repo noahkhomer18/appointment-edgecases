@@ -35,6 +35,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    height: 100%;
+}
+
+.card form button {
+    margin-top: auto;
 }
 
 .card input {
