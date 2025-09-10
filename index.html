@@ -3,102 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appointment Cards - Edge Cases Demo</title>
+    <title>Appointment Cards</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Appointment Scheduling - Edge Cases Demo</h1>
-        
-        <!-- Card 1: Without Edge Case Handling -->
+        <!-- Card 1: Without Edge Cases -->
         <div class="card">
-            <h2>❌ Appointment Card (No Edge Cases)</h2>
-            <p class="description">This card allows scheduling in the past, outside business hours, and far future dates.</p>
-            
-            <form id="appointmentForm1" class="appointment-form">
-                <div class="form-group">
-                    <label for="name1">Name:</label>
-                    <input type="text" id="name1" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email1">Email:</label>
-                    <input type="email" id="email1" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="date1">Appointment Date:</label>
-                    <input type="date" id="date1" name="date" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="time1">Appointment Time:</label>
-                    <input type="time" id="time1" name="time" required>
-                </div>
-                
-                <button type="submit">Schedule Appointment</button>
+            <h2>Appointment Card (No Edge Cases)</h2>
+            <form id="appointmentForm1">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="date" required>
+                <input type="time" required>
+                <button type="submit">Schedule</button>
             </form>
-            
-            <div id="result1" class="result"></div>
+            <div id="result1"></div>
         </div>
 
-        <!-- Card 2: With Edge Case Handling -->
+        <!-- Card 2: With Edge Cases -->
         <div class="card">
-            <h2>✅ Appointment Card (With Edge Cases)</h2>
-            <p class="description">This card prevents scheduling in the past, outside business hours, and limits to 3 months ahead.</p>
-            
-            <form id="appointmentForm2" class="appointment-form">
-                <div class="form-group">
-                    <label for="name2">Name:</label>
-                    <input type="text" id="name2" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email2">Email:</label>
-                    <input type="email" id="email2" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="date2">Appointment Date:</label>
-                    <input type="date" id="date2" name="date" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="time2">Appointment Time:</label>
-                    <input type="time" id="time2" name="time" required>
-                </div>
-                
-                <button type="submit">Schedule Appointment</button>
+            <h2>Appointment Card (With Edge Cases)</h2>
+            <form id="appointmentForm2">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="date" id="date2" required>
+                <input type="time" id="time2" required>
+                <button type="submit">Schedule</button>
             </form>
-            
-            <div id="result2" class="result"></div>
-        </div>
-
-        <!-- Educational Section -->
-        <div class="educational-section">
-            <h2>📚 Understanding Edge Cases</h2>
-            <div class="edge-case-explanation">
-                <h3>What are Edge Cases?</h3>
-                <p>Edge cases are unusual or extreme scenarios that can break your application if not handled properly. In appointment scheduling, common edge cases include:</p>
-                
-                <ul>
-                    <li><strong>Past Dates:</strong> Users shouldn't be able to schedule appointments in the past</li>
-                    <li><strong>Business Hours:</strong> Appointments should only be available during business hours (e.g., 9 AM - 5 PM)</li>
-                    <li><strong>Future Limits:</strong> Prevent scheduling too far in the future (e.g., beyond 3 months)</li>
-                    <li><strong>Weekend Scheduling:</strong> Some businesses don't operate on weekends</li>
-                    <li><strong>Holiday Scheduling:</strong> Block out holidays or special dates</li>
-                    <li><strong>Time Zone Issues:</strong> Handle different time zones properly</li>
-                </ul>
-                
-                <h3>How to Handle Edge Cases:</h3>
-                <ol>
-                    <li><strong>Input Validation:</strong> Check all user inputs before processing</li>
-                    <li><strong>Date/Time Validation:</strong> Ensure dates are within acceptable ranges</li>
-                    <li><strong>Business Rules:</strong> Implement business-specific constraints</li>
-                    <li><strong>User Feedback:</strong> Provide clear error messages for invalid inputs</li>
-                    <li><strong>Prevention:</strong> Use HTML5 input constraints and JavaScript validation</li>
-                </ol>
-            </div>
+            <div id="result2"></div>
         </div>
     </div>
 
