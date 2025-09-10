@@ -47,6 +47,15 @@ document.getElementById('appointmentForm2').addEventListener('submit', function(
         return;
     }
     
+    // Check if it's a weekend (Saturday = 6, Sunday = 0)
+    const dayOfWeek = appointmentDate.getDay();
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+        document.getElementById('result2').innerHTML = 'We are closed on weekends!';
+        document.getElementById('result2').className = 'error';
+        document.getElementById('result2').style.display = 'block';
+        return;
+    }
+    
     document.getElementById('result2').innerHTML = 'Appointment scheduled successfully!';
     document.getElementById('result2').className = 'success';
     document.getElementById('result2').style.display = 'block';
